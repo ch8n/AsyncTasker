@@ -93,4 +93,8 @@ class AsyncWithDataLoader(context: Context, private val data: Bundle?) :
         return work
     }
 
+    override fun deliverResult(data: String?) {
+        val result = "$data also updated in delivery result";
+        super.deliverResult(result)
+    }
 }

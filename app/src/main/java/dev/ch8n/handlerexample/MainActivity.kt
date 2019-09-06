@@ -116,7 +116,8 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 override fun onLoadFinished(loader: Loader<String>, data: String?) {
-
+                    result.text = data
+                    Log.d("AsyncLoader", data)
                 }
 
                 override fun onLoaderReset(loader: Loader<String>) {
