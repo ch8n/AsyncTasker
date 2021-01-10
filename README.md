@@ -1,4 +1,24 @@
+<h1 align="center"><a href="https://chetangupta.net/" target="_blank">AndroidBites</a>
+</h1>
 
+![AndroidBites](./androidbites_space.jpg)
+
+## :hand: About
+Hola Amigos! 🙌, welcome to my coding playground! go on explore around 👩‍💻
+
+Do let me know if you find something useful or want to suggest some improvement
+also don't forget to checkout of blogs at [`chetangupta.net`](https://chetangupta.net/)
+
+## :eyes: Social
+[LinkedIn](https://bit.ly/ch8n-linkdIn) |
+[Medium](https://bit.ly/ch8n-medium-blog) |
+[Twitter](https://bit.ly/ch8n-twitter) |
+[StackOverflow](https://bit.ly/ch8n-stackOflow) |
+[CodeWars](https://bit.ly/ch8n-codewar) |
+[Portfolio](https://bit.ly/ch8n-home) |
+[Github](https://bit.ly/ch8n-git) |
+[Instagram](https://bit.ly/ch8n-insta) |
+[Youtube](https://bit.ly/ch8n-youtube)
 
 
 # AsyncTasker
