@@ -58,8 +58,8 @@ Behind the Back uses `HandlerThread` as worker thread and handler to perform the
 2. long click fab to perform cancel async task
 
 # TODO
-[] test cases
-[] flag to check background task is active
+* test cases
+* flag to check background task is active
 
 
 
