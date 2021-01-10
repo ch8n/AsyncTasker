@@ -24,7 +24,7 @@ class WorkerHandler : HandlerThread("worker thread!") {
 }
 
 
-abstract class AsyncResolver<Params, Progress, Result> {
+abstract class AsyncTasker<Params, Progress, Result> {
 
     abstract fun doInBackground(vararg many: Params): Result
     abstract fun onPostExecute(data: Result)

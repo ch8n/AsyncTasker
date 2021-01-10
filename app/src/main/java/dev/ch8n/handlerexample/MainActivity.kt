@@ -2,7 +2,6 @@ package dev.ch8n.handlerexample
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.os.HandlerThread
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -14,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         @SuppressLint("HandlerLeak")
-        val task = object : AsyncResolver<String, Int, String>() {
+        val task = object : AsyncTasker<String, Int, String>() {
 
             override fun doInBackground(vararg many: String): String {
                 println("started doing work on ${Thread.currentThread().name}")
