@@ -5,16 +5,6 @@ import android.os.HandlerThread
 import android.os.Looper
 import android.util.Log
 
-
-interface IAsync<Params, Progress, Result> {
-    fun doInBackground(vararg many: Params): Result
-    fun onPostExecute(data: Result)
-    fun onPreExecute()
-    fun onProgressUpdate(progress: Progress)
-    fun execute()
-}
-
-
 class WorkerHandler : HandlerThread("worker thread!") {
 
     private val handler: Handler
@@ -35,17 +25,22 @@ class WorkerHandler : HandlerThread("worker thread!") {
 }
 
 
-abstract class AsyncResolver<Params, Progress, Result> : IAsync<Params, Progress, Result>, Handler(Looper.getMainLooper()) {
+abstract class AsyncResolver<Params, Progress, Result> {
+
+    abstract fun doInBackground(vararg many: Params): Result
+    abstract fun onPostExecute(data: Result)
+    abstract fun onPreExecute()
+    abstract fun onProgressUpdate(progress: Progress)
 
     private val workerHandler = WorkerHandler()
 
-    override fun execute() {
-        val parentHandler = this
+    fun execute(vararg many: Params) {
+        val parentHandler = Handler(Looper.getMainLooper())
         println("execute on ${Thread.currentThread().name}")
         parentHandler.post { onPreExecute() }
         workerHandler.execute {
             println("inside worker handler start on ${Thread.currentThread().name}")
-            val result: Result = doInBackground()
+            val result: Result = doInBackground(*many)
             println("inside worker handler end on ${Thread.currentThread().name}")
             parentHandler.post {
                 onPostExecute(result)

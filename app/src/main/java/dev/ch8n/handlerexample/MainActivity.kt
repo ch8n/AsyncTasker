@@ -17,24 +17,22 @@ class MainActivity : AppCompatActivity() {
         val task = object : AsyncResolver<String, Int, String>() {
 
             override fun doInBackground(vararg many: String): String {
-
-                println("execute doInBackground on ${Thread.currentThread().name} == Worker")
-                Thread.sleep(1000)
-                println("execute on ${Thread.currentThread().name}")
+                Thread.sleep(2000)
+                println("completed on ${Thread.currentThread().name}")
 
                 return "done"
             }
 
             override fun onPostExecute(data: String) {
-                println("execute onPostExecute on ${Thread.currentThread().name}  == UI")
+                println("inside onPostExecute on ${Thread.currentThread().name}  == UI")
             }
 
             override fun onPreExecute() {
-                println("execute onPreExecute on ${Thread.currentThread().name} == UI ")
+                println("inside onPreExecute on ${Thread.currentThread().name} == UI ")
             }
 
             override fun onProgressUpdate(progress: Int)  = runOnUiThread(){
-                println("execute onProgressUpdate on ${Thread.currentThread().name} == Worker")
+                println("inside onProgressUpdate on ${Thread.currentThread().name} == Worker")
             }
 
         }
