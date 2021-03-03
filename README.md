@@ -22,7 +22,8 @@ also don't forget to checkout of blogs at [`chetangupta.net`](https://chetangupt
 
 
 # AsyncTasker
-Self Implemented Async Task, cause Async Task is deprecated
+[Pooja's AsyncTask Challenge](https://pooja-srivs.medium.com/build-your-own-asynctask-fcfc4aaf0225) 
+Self Implemented Async Task for Pooja Srivs Challenge
 
 # API design
 This is a sample project api design is similar to that of asyncTask,
